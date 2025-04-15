@@ -6,14 +6,17 @@ import { useState } from 'react';
 function App() {
   const [gameState, setGameState] = useState('playing');
 
+  // User choose to reset the game
   function handleResetGame() {
     setGameState('start');
   }
 
+  // User has started the game
   function handleStartGame() {
     setGameState('playing');
   }
 
+  // The game has ended
   function handleEndGame() {
     setGameState('end');
   }

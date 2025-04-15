@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { topographyData } from '../data/questions';
-import CreateCard from '../components/Card';
-
-const questions = topographyData.map((data) => {
-  return data.question;
-});
+import { GameBoard } from '../components/GameBoard';
 
 export function GameScreen() {
-  return (
-    <div>
-      <p>GamePage component</p>
+  // Get all questions from dataset
+  const [questions] = useState(
+    topographyData.map((data) => {
+      return data.question;
+    })
+  );
 
-      {/* Create a card for each question in the list */}
-      {questions.map((question) => {
-        return <CreateCard value={question} />;
-      })}
-    </div>
+  // Get all answers from dataset
+  const [answers] = useState(
+    topographyData.map((data) => {
+      return data.answer;
+    })
+  );
+
+  return (
+    <section>
+      <p>GameScreen Page</p>
+      <div>
+        {/* Create a gameboard for the question cards */}
+        <div>
+          <GameBoard values={questions} />
+        </div>
+
+        {/* Create a gameboard for the answer cards */}
+        <div>
+          <GameBoard values={answers} />
+        </div>
+      </div>
+    </section>
   );
 }
