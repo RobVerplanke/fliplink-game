@@ -5,8 +5,8 @@ export default function CreateCard({ value }: CardProps) {
   {
     // Create a card with the given value as its content
     return (
-      <div>
-        <p>{value}</p>
+      <div className="card">
+        <h3>{value}</h3>
       </div>
     );
   }

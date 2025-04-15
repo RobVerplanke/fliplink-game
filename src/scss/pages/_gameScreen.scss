@@ -1,0 +1,14 @@
+.gameboards-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 800px;
+  height: 800px;
+  border-radius: 20px;
+  background-color: rgba(111, 0, 255, 0.466);
+}

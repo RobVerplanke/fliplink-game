@@ -20,7 +20,7 @@ export function GameScreen() {
   return (
     <section>
       <p>GameScreen Page</p>
-      <div>
+      <div className="gameboards-container">
         {/* Create a gameboard for the question cards */}
         <div>
           <GameBoard values={questions} />

@@ -4,7 +4,7 @@ import { GameBoardProps } from '../types/dataTypes.ts';
 
 export function GameBoard({ values }: GameBoardProps) {
   return (
-    <div>
+    <div className="gameboard">
       {values.map((value, index) => (
         <CreateCard key={index} value={value} />
       ))}
