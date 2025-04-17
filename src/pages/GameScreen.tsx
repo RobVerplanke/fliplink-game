@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { topographyData } from '../data/questions';
 import { GameBoard } from '../components/GameBoard';
 import backgroundImage from '../assets/images/game-background.jpg';
+import Title from '../components/Title';
+import Scoreboard from '../components/Scoreboard';
+import Timer from '../components/Timer';
 
 // Set background image
 const style = {
@@ -29,19 +32,28 @@ export function GameScreen(onGameEnd) {
   );
 
   return (
-    <section style={style}>
-      <p>GameScreen Page</p>
-      <div className="gameboards-container">
-        {/* Create a gameboard for the question cards */}
+    <div className="grid" style={style}>
+      <section className="grid__title-container">
+        <Title />
+      </section>
+
+      <section className="grid__scoreboard-container">
+        <Scoreboard />
+      </section>
+
+      <section className="grid__timer-container">
+        <Timer />
+      </section>
+
+      <section className="grid__gameboards-container">
         <div>
           <GameBoard values={questions} />
         </div>
 
-        {/* Create a gameboard for the answer cards */}
         <div>
           <GameBoard values={answers} />
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

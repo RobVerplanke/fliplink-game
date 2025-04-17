@@ -38,27 +38,69 @@ a:active {
   --text-color: rgb(0, 0, 0);
 }
 
-.gameboards-container {
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+}
+.grid__title-container {
   display: flex;
+  justify-content: center;
+  font-family: Joti One, Arial, Helvetica, sans-serif;
+  font-size: 6em;
+  color: rgb(0, 89, 255);
+}
+.grid__scoreboard-container {
+  display: flex;
+  justify-content: center;
+}
+.grid__timer-container {
+  display: flex;
+  justify-content: center;
+}
+.grid__gameboards-container {
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
-
-.gameboard {
+.grid__gameboards-container__gameboard {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 800px;
-  height: 800px;
-  border-radius: 20px;
-  background-color: rgba(111, 0, 255, 0.466);
+  gap: 15px;
+  width: 600px;
+  height: 600px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 200px;
-  margin: 20px;
-  border-radius: 5px;
-  background-color: red;
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #3498db;
+  color: white;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #2980b9;
+}
+
+.card p {
+  font-weight: bold;
+  text-align: center;
 }/*# sourceMappingURL=app.css.map */
